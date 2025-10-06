@@ -1,7 +1,6 @@
 <?php
 
-$topic = isset($_GET["topic"]) ? $_GET["topic"] : "todas";
-
+$topic = isset($_GET["topic"]);
 $bmw = (object) [
 	'name' => 'BMW',
 	'url' => 'https://w7.pngwing.com/pngs/538/981/png-transparent-bmw-logo-bmw-car-logo-bmw-logo-trademark-logo-graphics.png',
@@ -43,9 +42,9 @@ $jeep = (object) [
 	'link' => 'https://www.jeep.com.ar/'
 ];
 
-if ($topic == "grandes marcas"){
+if ($topic == "Alta Gama"){
     $marcas = [$bmw, $mercedes, $audi, $alfaromeo, $jeep];
-} else if ($topic == "gama media") {
+} else if ($topic == "Media Gama") {
     $marcas = [$volkswagen, $peugeot, $honda]; 
 } else {
     $marcas = [$bmw, $mercedes, $audi, $volkswagen, $peugeot, $honda, $alfaromeo, $jeep];
@@ -66,6 +65,28 @@ $descriptitulo = "Donde compran los fanaticos por los autos";
 	    .ppal{
 			background-color: grey;
 		}
+		header{
+        background-color: rgba(20, 20, 20, 1); 
+		color: white;
+        text-align: center;
+        font-size: 20px; 
+        padding: 15px;
+		} 
+		header nav{
+		margin: 10px; 
+        text-decoration: none; 
+        color: black; 
+        font-weight: 600; 
+        padding: 4px 7px;
+        border-radius: 5px;
+        position: relative;
+        transition: all 0.1s ease;
+	    }
+	    header nav a:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: rgba(255, 230, 230, 0.321);
+        transform: scale(1.5);
+        }
 		.tituloppal{
 			text-align: center;
 			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -93,14 +114,33 @@ $descriptitulo = "Donde compran los fanaticos por los autos";
 			width: 100%;
 		}
 		.card-body a{
-			border-color: grey;
 			background-color: black;
+		}
+		.card-body a:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: black;
+        transform: scale(1.0);
+		border-color: black;
+        }
+		footer{
+		    background-color: rgba(20, 20, 20, 1); 
+		    color: white;
+            text-align: center;
+            font-size: 20px; 
+            padding: 15px;
 		}
 	</style>
 	
 </head>
+<header>
+	<nav>
+<a href="./index.php">HOME</a>
+<a href="">CONTACTO</a>
+</nav>
+</header>
+
 <body class="ppal">
-<h1 class="tituloppal"> <?= $tituloppal ?>: <?= $topic ?> </h1>
+<h1 class="tituloppal"> <?= $tituloppal ?></h1>
 <h2 class="descripcionpag"> <?= $descriptitulo;?> </h2>
 <div class="container">
 <div class="row">
@@ -117,4 +157,8 @@ $descriptitulo = "Donde compran los fanaticos por los autos";
 </div></div>
 	
 </body>
+
+<footer>
+	<h3> © Buenos Aires, Argentina ©</h3>
+</footer>
 </html>
