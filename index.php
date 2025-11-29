@@ -152,4 +152,4 @@ require_once("./components/styleSetup.php");
 
 </body>
 
-</html>
+</html> ,
